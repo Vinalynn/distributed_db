@@ -5,8 +5,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-	<import resource="classpath:WebController.xml"/>
-	    
-	<bean id="logFilter" class="com.alibaba.druid.filter.logging.Log4jFilter" />
+	<bean id="DistributedDBRequestController" class="org.vinalynn.jw.dist_db.web.controller.DistributedDBRequestController">
+	
+	</bean>
 
 </beans>
