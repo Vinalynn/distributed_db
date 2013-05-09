@@ -3,10 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
-
+	
+	<import resource="classpath:AppDao.xml"/>
+	<import resource="classpath:AppDao-Beans.xml" />
+	<import resource="classpath:AppService.xml"/>
 	<import resource="classpath:WebController.xml" />
-
-	<bean id="logFilter" class="com.alibaba.druid.filter.logging.Log4jFilter" />
 
 	<!-- freemarker的配置 -->
 	<bean id="freemarkerConfig"

@@ -6,13 +6,6 @@
 
 	<display-name>Archetype Created Web Application</display-name>
 
-	<env-entry>
-		<env-entry-name>spring.profiles.default</env-entry-name>
-		<env-entry-type>java.lang.String</env-entry-type>
-		<env-entry-value>local</env-entry-value>
-	</env-entry>
-
-
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:ServletDispatcher.xml</param-value>
