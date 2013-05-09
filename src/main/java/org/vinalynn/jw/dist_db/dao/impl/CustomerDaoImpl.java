@@ -37,7 +37,9 @@ public class CustomerDaoImpl implements ICustomerDao {
 		} else if (StringUtils.equalsIgnoreCase(ds, "B")) {
 			jdbcTemplateB.update(sql, new Object[] { code, customerName,
 					address, "U", currentDate });
-			throw new Exception("give me five.");
+			//unblock the code line below,
+			//the transaction of distributed database will be rolled back
+			/*throw new Exception("give me five.");*/
 		} else {
 			throw new Exception("data source[" + ds + "] is not defined.");
 		}
