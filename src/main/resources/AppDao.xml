@@ -11,10 +11,11 @@
 	<!-- <bean id="logFilter" class="com.alibaba.druid.filter.logging.Log4jFilter" 
 		/> -->
 
-	<!--指定Spring配置中用到的属性文件 -->
-	<!-- <bean id="propertyConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
-		<property name="locations"> <list> <value>classpath:jdbc.properties</value> 
-		</list> </property> </bean> -->
+	<!-- <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:jdbc.properties</value>
+		</property>
+	</bean> -->
 
 	<bean id="SDS" class="com.atomikos.jdbc.AtomikosDataSourceBean"
 		destroy-method="close">
@@ -28,6 +29,7 @@
 			<value>SELECT 1</value>
 		</property>
 		<property name="xaProperties">
+			<!-- <value>${jdbc.SDS.properties}</value> -->
 			<props>
 				<prop key="user">test</prop>
 				<prop key="password">test</prop>
@@ -54,6 +56,7 @@
 			<value>SELECT 1</value>
 		</property>
 		<property name="xaProperties">
+			<!-- <value>${jdbc.SDS2.properties}</value> -->
 			<props>
 				<prop key="user">answer</prop>
 				<prop key="password">answer</prop>
@@ -98,7 +101,7 @@
 		</property>
 	</bean>
 
-	<!-- 定义事务规则的拦截器 -->
+	<!-- transactionInterceptor -->
 	<bean id="transactionInterceptor"
 		class="org.springframework.transaction.interceptor.TransactionInterceptor">
 		<property name="transactionManager" ref="springJTATransactionManager" />
