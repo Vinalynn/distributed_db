@@ -6,7 +6,9 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
 	<bean id="DistributedDBRequestController" class="org.vinalynn.jw.dist_db.web.controller.DistributedDBRequestController">
-	
+		<property name="customerSV">
+			<ref bean="ICustomerSV"/>
+		</property>
 	</bean>
 
 </beans>
